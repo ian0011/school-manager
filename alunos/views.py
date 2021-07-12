@@ -1,3 +1,5 @@
 from django.shortcuts import render
 
-# Create your views here.
+
+def view_alunos(request):
+    return render(request, 'alunos.html', {})
