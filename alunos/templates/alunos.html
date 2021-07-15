@@ -1,24 +1,12 @@
-{% load static %}
-<!DOCTYPE html>
-<html lang="pt-br">
+{% extends 'base.html' %}
 
-<head>
-    <link rel="stylesheet" href="{% static 'css/alunos.css' %}">
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aluno</title>
-</head>
+{% block content %}
+<form>
+    <label>Nome: </label>
+    <input type="text" name="Nome Completo" value="{{ nome }}">
+    <label>Email: </label>
+    <input type="email" name="Email" value="{{ email }}">
+    <label>Senha: </label>
 
-<body>
-    <form>
-        <label>Nome: </label>
-        <input type="text" name="Nome Completo" value="{{ nome }}">
-        <label>Email: </label>
-        <input type="email" name="Email" value="{{ email }}">
-        <label>Senha: </label>
-
-    </form>
-</body>
-
-</html>
+</form>
+{% endblock %}
