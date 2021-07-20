@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'alunos',
+    'home',
 ]
 
 MIDDLEWARE = [
@@ -123,4 +124,6 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
 STATIC_URL = '/static/'
+LOGIN_URL = '/login/'
+LOGIN_REDIRECT_URL = 'alunos'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')

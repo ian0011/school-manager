@@ -1,24 +1,21 @@
-from alunos.models import Aluno
 from django.shortcuts import render, get_object_or_404
+from django.contrib.auth.decorators import login_required
+from .models import Aluno
 from django.http import HttpResponseRedirect
 from django.urls import reverse
 from alunos.forms import AlunoForm
 
 
-def view_alunos(request):
-    aluno_instance = get_object_or_404(Aluno)
+@login_required
+def alunos_list(request):
+    alunos = Aluno.objects.all()
+    return render(request, 'alunos.html', {'alunos': alunos})
 
-    if request.method == 'POST':
-        form = AlunoForm(request.POST)
 
-        if form.is_valid():
-            aluno_instance.save()
+@login_required
+def alunos_new(request):
+    form = PersonForm(request.POST or None, request.FILES or None)
 
-            return HttpResponseRedirect(reverse('all-borrowed'))
-    else:
-        form = ''
-        context = {
-            'form': form,
-            'aluno_instance': aluno_instance
-        }
-    return render(request, 'alunos.html', context)
+    if form.is_valid():
+        form.save()
+        return redirect('alunos')
