@@ -18,10 +18,11 @@ from django.contrib.auth import views as auth_views
 from django.urls import path, include
 from django.conf.urls.static import static
 from django.conf import settings
-
+from alunos import urls as alunos_urls
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
     path('', include(home_urls)),
+    path('alunos/', include(alunos_urls)),
+    path('admin/', admin.site.urls),
     path('login/', auth_views.LoginView.as_view(), name='login'),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

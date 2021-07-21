@@ -1,12 +1,21 @@
 {% extends 'base.html' %}
 
-{% block content %}
-<form>
-    <label>Nome: </label>
-    <input type="text" name="Nome Completo" value="{{ nome }}">
-    <label>Email: </label>
-    <input type="email" name="Email" value="{{ email }}">
-    <label>Senha: </label>
+{% block title %} Seja bem vindo {% endblock %}
 
-</form>
-{% endblock %}
+{% block main %}
+
+<div class="row">
+    <div class="col">
+
+    </div>
+    <div class="col-6">
+        <ul class="list-group">
+            {% for aluno in alunos %}
+
+            <li class="list-group-item">
+                <!-- <a href></a> -->
+                <!-- <button type="button"></button> -->
+            </li>
+        </ul>
+    </div>
+</div>

@@ -4,7 +4,7 @@
 {% block main %}
 
 <h2>Login</h2>
-<form method="post" action="{% url 'login' %}">
+<form method="post">
     {% csrf_token %}
     <table>
         <tr>
@@ -16,6 +16,6 @@
             <td>{{ form.password }}</td>
         </tr>
     </table>
-    <input type="submit" value="login" />
-    <input type="hidden" name="next" value="{{ next }}" />
+    <button type="submit">Login</button>
+
     {% endblock %}
