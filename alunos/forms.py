@@ -1,7 +1,9 @@
 from django import forms
-from alunos.models import Aluno
+from .models import Aluno
 
 
-class AlunoForm(forms.Form):
-    model = Aluno
-    fields = ['nome', 'cpf', 'email', 'password', 'password2']
+class AlunoForm(forms.ModelForm):
+
+    class Meta:
+        model = Aluno
+        fields = ('nome',)
