@@ -10,11 +10,14 @@
     </div>
     <div class="col-6">
         <ul class="list-group">
-            {% for aluno in alunos %}
+            {% for alunos in aluno %}
 
             <li class="list-group-item">
-                <!-- <a href></a> -->
-                <!-- <button type="button"></button> -->
+                <a href=" {% url 'alunos_update' alunos.id %}">{{ alunos.nome }}</a>
+                <a href="{% url 'alunos_delete' alunos.id %}">
+
+                </a>
+
             </li>
             {% endfor %}
         </ul>

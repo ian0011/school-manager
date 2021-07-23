@@ -18,3 +18,26 @@ def alunos_new(request):
         form.save()
         return redirect('alunos_list')
     return render(request, 'alunos_new.html', {'form': form})
+
+
+@login_required
+def alunos_update(request, id):
+    aluno = get_object_or_404(Aluno, pk=id)
+    form = AlunoForm(request.POST or None, instance=aluno)
+
+    if form.is_valid():
+        form.save()
+        return redirect('alunos_list')
+
+    return render(request, 'alunos_new.html', {'form': form})
+
+
+@login_required
+def alunos_delete(request, id):
+    aluno = get_object_or_404(Aluno, pk=id)
+
+    if request.method == 'POST':
+        aluno.delete()
+        return redirect('alunos_list')
+
+    return render(request, 'aluno_delete_confirm.html', {'aluno': aluno})
