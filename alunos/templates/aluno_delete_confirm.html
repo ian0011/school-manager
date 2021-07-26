@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block title %} Confirmação {% endblock %}
+
+{% block main %}
+
+<h1>Tem certeza que deseja deletar {{ alunos.nome }}? </h1>
+<form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    <button type="submit">Deletar</button>
+</form>
+
+{% endblock %}

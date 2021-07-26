@@ -9,3 +9,11 @@ def home(request):
 def my_logout(request):
     logout(request)
     return redirect('home')
+
+
+def alunos_list(request):
+    return render(request, 'alunos.html')
+
+
+def alunos_new(request):
+    return render(request, 'alunos_new.html')

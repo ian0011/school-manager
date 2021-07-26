@@ -15,8 +15,11 @@
 
                 <a href=" {% url 'alunos_update' alunos.id %}">{{ alunos.nome }}</a>
                 <a href="{% url 'alunos_delete' alunos.id %}">
-                    <button type="button" class="delete">Deletar</button>
-                    <i class="fas fa-trash-alt"></i>
+                    <button type="button" class="delete">
+                        <i class="fa-solid fa-user-minus fa-lg">Remover</i>
+
+                    </button>
+
 
                 </a>
 
