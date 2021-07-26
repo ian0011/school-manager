@@ -1,5 +1,4 @@
 {% extends 'base.html' %}
-
 {% block title %} Seja bem vindo {% endblock %}
 
 {% block main %}
@@ -13,8 +12,11 @@
             {% for alunos in aluno %}
 
             <li class="list-group-item">
+
                 <a href=" {% url 'alunos_update' alunos.id %}">{{ alunos.nome }}</a>
                 <a href="{% url 'alunos_delete' alunos.id %}">
+                    <button type="button" class="delete">Deletar</button>
+                    <i class="fas fa-trash-alt"></i>
 
                 </a>
 

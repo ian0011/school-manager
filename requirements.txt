@@ -1,1 +1,3 @@
 Django==3.1.5
+python-decouple==3.3
+fontawesomefree==5.15.3

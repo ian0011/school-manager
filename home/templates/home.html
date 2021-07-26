@@ -10,7 +10,7 @@
     </div>
     <div class="col-sm">
         {% if user.is_authenticated %}
-        <p>Olá {{aluno.username}} </p>
+        <p>Olá {{user}} </p>
         <a href="{% url 'logout' %}">Sair</a>
         {% else %}
         <a href="{% url 'login' %}" class="">Entrar</a>
