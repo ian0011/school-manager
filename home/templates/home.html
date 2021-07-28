@@ -6,14 +6,17 @@
 
 <div class="container">
     <div class="col-sm">
-
-    </div>
-    <div class="col-sm">
         {% if user.is_authenticated %}
-        <a href="{% url 'alunos_list' %}">Lista de Alunos</a>
-        <a href="{% url 'alunos_new' %}">Novo Aluno</a>
-        <p>Olá {{user}} </p>
-        <a href="{% url 'logout' %}">Sair</a>
+        <nav class="menu">
+            <ul>
+                <li><a href="{% url 'alunos_list' %}">Lista de Alunos</a></li>
+                <li><a href="{% url 'alunos_new' %}">Novo Aluno</a></li>
+                <li>
+                    <p>Olá {{user}} </p>
+                </li>
+                <li><a href="{% url 'logout' %}">Sair</a></li>
+            </ul>
+        </nav>
         {% else %}
         <a href="{% url 'login' %}" class="">Entrar</a>
         {% endif %}

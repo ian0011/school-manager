@@ -12,16 +12,17 @@
 </head>
 
 <body>
-    <div class="container">
-        {% block main %}
+    <header>
+        <div class="container">
+            {% block main %}
+
+            {% endblock %}
+        </div>
+
+        {% block footer %}
 
         {% endblock %}
-    </div>
-
-    {% block footer %}
-
-    {% endblock %}
-
+    </header>
 </body>
 
 </html>
