@@ -1,6 +1,14 @@
 {% extends 'base.html' %}
 
-{% block title%} Seja bem vindo {% endblock%}
+{% load static %}
+
+{% block extrahead %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'home.css' %}">
+
+{% endblock %}
+
+{% block title %} Seja bem vindo {% endblock %}
 
 {% block main %}
 
@@ -11,14 +19,14 @@
             <ul>
                 <li><a href="{% url 'alunos_list' %}">Lista de Alunos</a></li>
                 <li><a href="{% url 'alunos_new' %}">Novo Aluno</a></li>
-                <li>
-                    <p>Olá {{user}} </p>
-                </li>
+
+                <li><a href="{% url 'register' %}">Novo Usuário</a></li>
                 <li><a href="{% url 'logout' %}">Sair</a></li>
             </ul>
         </nav>
         {% else %}
         <a href="{% url 'login' %}" class="">Entrar</a>
+
         {% endif %}
     </div>
 </div>

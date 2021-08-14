@@ -1,0 +1,7 @@
+<form method="post">
+
+    {{ form.as_table }}
+    {% csrf_token %}
+    <input type="submit" value="Register">
+    <li><a href="{% url 'home' %}">Voltar</a></li>
+</form>

@@ -16,8 +16,6 @@ from django.contrib import admin
 from home import urls as home_urls
 from django.contrib.auth import views as auth_views
 from django.urls import path, include
-from django.conf.urls.static import static
-from django.conf import settings
 from alunos import urls as alunos_urls
 
 urlpatterns = [
@@ -25,4 +23,5 @@ urlpatterns = [
     path('alunos/', include(alunos_urls)),
     path('admin/', admin.site.urls),
     path('login/', auth_views.LoginView.as_view(), name='login'),
+
 ]
