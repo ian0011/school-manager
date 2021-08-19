@@ -1,31 +1,46 @@
 {% extends 'base.html' %}
-{% block title %} Seja bem vindo {% endblock %}
+
+{% load static %}
+
+{% block extrahead %}
+<script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+    crossorigin="anonymous"></script>
+<script type="text/javascript" src="{% static 'alunos.js' %}"></script>
+<link rel="stylesheet" type="text/css" href="{% static 'alunos.css' %}">
+
+{% endblock %}
+
+{% block title %} Seja Bem vindo {% endblock %}
+
+
 
 {% block main %}
+<section>
+    <h1>Alunos</h1>
 
-<div class="row">
-    <div class="col">
-
+    <div class="tbl-header">
+        <table cellpadding="0" cellspacing="0" border="0">
+            <thead>
+                <tr>
+                    <th>Alunos</th>
+                    <th>Email</th>
+                </tr>
+            </thead>
+        </table>
     </div>
-    <div class="col-6">
-        <ul class="list-group">
-            {% for alunos in aluno %}
 
-            <li class="list-group-item">
-
-                <a href=" {% url 'alunos_update' alunos.id %}">{{ alunos.nome }}</a>
-                <a href="{% url 'alunos_delete' alunos.id %}">
-                    <button type="button" class="delete">
-                        <i class="fa-solid fa-user-minus fa-lg">Remover</i>
-
-                    </button>
-
-
-                </a>
-
-            </li>
-            {% endfor %}
-        </ul>
+    <div class="tbl-content">
+        <table cellpadding="0" cellspacing="0" border="0">
+            <tbody>
+                <tr>
+                    {% for alunos in aluno %}
+                    <td><a href=" {% url 'alunos_update' alunos.id %}">{{ alunos.nome }}</a></td>
+                    <td>{{ alunos.email }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
     </div>
-</div>
+</section>
+
 {% endblock %}
